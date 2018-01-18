@@ -16,3 +16,8 @@ Segue os passos para subir a aplicação
 - Foi utilizado o swagger para API Rest.
 - Para verificar quais são os metodos que foram utilizado acessar a seguinte url depois que a aplicação estiver ativa:
 - http://localhost:8888/swagger-ui.html
+
+
+-OBS.: Se a aplicação for executada em um Tomcat externo vai ser considerado a porta que estiver configurada, o nome da aplicacação vai ser o nome que foi gerado no build pelo comando mvn. 
+- Abaixo o exemplo do caminho para o Tomcat externo:
+--http://localhost:8080/tree-spring-boot-rest-0.0.1-SNAPSHOT/node
