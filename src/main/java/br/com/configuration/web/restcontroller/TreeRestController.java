@@ -52,15 +52,24 @@ public class TreeRestController {
 	@ResponseBody
 	@ApiOperation(value = "Busca todos os elementos o nó")
 	public ResponseEntity<List<NodeDTO>> getNode() {
-		LOGGER.info("Salvando o novo no");
+		LOGGER.info("Buscando todos os nós");
 		return new ResponseEntity<List<NodeDTO>>(nodeService.getAllNode(), HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "{parentId}", method = RequestMethod.GET, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
-	@ApiOperation(value = "Busca os elementos o nó")
+	@ApiOperation(value = "Busca os elementos pelo pai do nó")
 	public ResponseEntity<NodeDTO> getNodeById(@PathVariable("parentId") Long parentId) {
-		LOGGER.info("Buscando ");
+		LOGGER.info("Buscando o nó pelo id do pai ");
 		return new ResponseEntity<NodeDTO>(nodeService.getChildrenNodeByParentId(parentId), HttpStatus.OK);
+	}
+	
+	@RequestMapping(value = "{id}", method = RequestMethod.DELETE, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseBody
+	@ApiOperation(value = "Deleta o no informado")
+	public ResponseEntity<String> deleteNode(@PathVariable("id") Long id) {
+		LOGGER.info("Deletando o no ");
+		nodeService.deleteNode(id);
+		return new ResponseEntity<String>(HttpStatus.OK);
 	}
 }

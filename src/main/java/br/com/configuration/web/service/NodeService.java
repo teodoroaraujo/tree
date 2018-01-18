@@ -184,4 +184,22 @@ public class NodeService {
 		}
 	}
 
+	public void deleteNode(Long id) {
+
+		try {
+
+			Node node = nodeRepository.findOne(id);
+
+			if (node == null) {
+				LOGGER.info("No nao encontrado com o id: " + id);
+				throw new NodeNotFoundException(HttpStatus.NOT_FOUND, Constants.NOT_FOUND, null);
+			}
+
+			nodeRepository.delete(node);
+		} catch (DataAccessException e) {
+			throw new BadRequestException(HttpStatus.BAD_REQUEST, Constants.BAD_REQUEST, e.getMessage());
+		}
+
+	}
+
 }

@@ -10,8 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -29,7 +29,7 @@ public class Node {
 	@Column(name = "description")
 	private String description;
 
-	@ManyToOne(fetch = FetchType.LAZY, cascade = { CascadeType.ALL })
+	@OneToOne(fetch = FetchType.LAZY, cascade = { CascadeType.ALL })
 	@JoinColumn(name = "parentId", insertable = true, updatable = true, nullable = true)
 	private Node node;
 
@@ -39,7 +39,7 @@ public class Node {
 	@Column(name = "detail")
 	private String detail;
 
-	@OneToMany(fetch = FetchType.EAGER)
+	@OneToMany(fetch = FetchType.EAGER,cascade = { CascadeType.ALL })
 	@JoinColumn(name = "parentId")
 	private Set<Node> nodes;
 
