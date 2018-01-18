@@ -2,6 +2,7 @@
 Application tree using rest with java8, spring boot
 O Desenvolvimento foi feito em spring boot versão 1.5.1.RELEASE
 Foi utilizado o mysql para a manipulação dos dados
+- Os arquivos para configuração do banco de dados se encontra no application.properties
 - Para subir a aplicação é necessario criar o schema no mysql com o nome de "node".
 - Depois de criado é so executar a aplicação.
 Segue os passos para subir a aplicação
