@@ -1,23 +1,22 @@
 # tree
-Application tree using rest with java8, spring boot e maven.
-O Desenvolvimento foi feito em spring boot versão 1.5.1.RELEASE, mysql e maven.
-Para a criação do .war executar o seguinte comando.
--mvn package na estrutura da pasta onde se encontra o arquivo pom.xml
-Foi utilizado o mysql para a manipulação dos dados
-- Os arquivos para configuração do banco de dados se encontra no application.properties
-- Para subir a aplicação é necessario criar o schema no mysql com o nome de "node".
-- Depois de criado é so executar a aplicação.
-Segue os passos para subir a aplicação
-- No projeto tem um arquivo application.properties com uma propriedade com o nome:
-    spring.jpa.hibernate.ddl-auto = create-drop
-  Essa propriedade e para subir a aplicação criando o banco de dados.
-- A aplicação está sendo executada na porta -8888, no application.properties existe uma propriedade com o nome server.port que pode ser modificada para não ter conflido na aplicação
-- Executar a classe ApplicationConfig
-- Foi utilizado o swagger para API Rest.
-- Para verificar quais são os metodos que foram utilizado acessar a seguinte url depois que a aplicação estiver ativa:
+The development was done in spring boot version 1.5.1.RELEASE, mysql and maven.
+To create the .war run the following command.
+-mvn package in the folder structure where the pom.xml file is located
+Mysql was used for data manipulation
+- The files for database configuration are in application.properties
+- To upload the application it is necessary to create the schema in mysql with the name of "node".
+- Once created is just run the application.
+Follow the steps to upload the application
+- In the project has an application.properties file with a property named:
+--spring.jpa.hibernate.ddl-auto = create-drop
+- This property is to upload the application by creating the database.
+- The application is running on port -8888, in the application.properties there is a property named server.port that can be modified to not have conflicted in the application
+- Run the ApplicationConfig class
+- The swagger for API Rest was used.
+- To verify which methods were used access the following url after the application is active:
 - http://localhost:8888/swagger-ui.html
 
 
--OBS.: Se a aplicação for executada em um Tomcat externo vai ser considerado a porta que estiver configurada, o nome da aplicacação vai ser o nome que foi gerado no build pelo comando mvn. 
-- Abaixo o exemplo do caminho para o Tomcat externo:
+-OBS .: If the application is executed in an external Tomcat will be considered the port that is configured, the name of the application will be the name that was generated in the build by the mvn command.
+- Below is the example of the path to external Tomcat:
 --http://localhost:8080/tree-spring-boot-rest-0.0.1-SNAPSHOT/node
