@@ -1,4 +1,4 @@
-# tree
+# tree-spring-boot
 The development was done in spring boot version 1.5.1.RELEASE, mysql and maven.
 To create the .war run the following command.
 -mvn package in the folder structure where the pom.xml file is located
